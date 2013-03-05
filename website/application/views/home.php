@@ -16,10 +16,26 @@
 			
 			<p>View has been loaded</p>
 			
-			<!-- Loading blog titles -->
-			<?php foreach($records as $row): ?>
-				<h1><?php echo $row->title; ?> </h1>
+			<!-- Displaying database data -->
+			<?php foreach($rows as $r): ?>
+			
+			<h1><?php echo $r->title; ?> </h1>
+			<div><?php echo $r->contents; ?></div>
+			
 			<?php endforeach ?>
+			
+			</b>
+			
+			<!-- Show all the users! -->
+			<div>
+				<h2>Here are all the users!</h2>
+				<?php foreach($users as $u): ?>
+								
+				<h3><?php echo $u->author; ?></h3>
+				
+				<?php endforeach ?>
+			
+			</div>
 			
 		</div>
 		
