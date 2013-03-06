@@ -7,16 +7,15 @@
 	
 		<!-- inline styling only for this purpose -->
 		
-		<style type="text/css">
-			label {display: block;}
-		</style>
+		<link rel="stylesheet" href="<?php echo base_url();?>css/style.css" type="text/css" media="screen" charset="utf-8">
 	
 	</head>
 	
 <body>
 
-	<div id="newsletter_form">
 	
+	<div id="newsletter_form">
+	<h2>Signup for the Newsletter</h2>
 		<!-- Use helper, form_open and give controller/method -->
 		<!-- THIS IS THE SOURCE :http://localhost:8888/ci/index.php/index.php/email/send -->
 		<!-- IT SHOULD BE: http://localhost:8888/ci/website/index.php/email/send  -->
@@ -44,6 +43,8 @@
 			<p><?php echo form_submit('submit', "Submit"); ?>
 						
 		<?php echo form_close(); ?>
+		
+		<?php echo validation_errors('<p class="error">');  ?>
 	
 	</div><!-- END NEWSLETTER FORM -->
 </body>
