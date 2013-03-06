@@ -16,18 +16,18 @@ class Email extends CI_Controller{
 		
 	}
 
-
 	function index(){
 	
-		$config = array(
-			'protocol' => 'smtp',
-			'smtp_host' => 'ssl://smtp.googlemail.com',
-			'smtp_port' => 465,
-			'smtp_user' => 'wunderwalk24@gmail.com',
-			'smtp_pass' => 'wunder24!',
-		);
+		//load the html view
+		$this->load->view('newsletter');
 		
-		$this->load->library('email', $config);
+	}
+	
+	function send(){
+		
+		echo 'hello from send'; die();
+		
+		$this->load->library('email'); // removed config 
 		$this->email->set_newline("\r\n");
 		
 		$this->email->from('wunderwalk24@gmail.com', 'Phil Walker');
@@ -35,8 +35,17 @@ class Email extends CI_Controller{
 		$this->email->subject('Hey phil, your on your way to becoming a PHP developer!');
 		$this->email->message('Program 3 hours every day and you will become the best!');
 
+		//item means grab from file
+		$path = $this->config->item('server_root');
+		//points directly to file to attach
+		$file = $path . '/ci/website/attachments/yourInfo.txt';
+
+		//attach to email
+		$this->email->attach($file);
+		
+		//Confirm if sent
 		if($this->email->send()){
-			echo 'our email was sent.';
+			echo 'Your email was sent.';
 		}else{
 			show_error($this->email->print_debugger());
 		}
