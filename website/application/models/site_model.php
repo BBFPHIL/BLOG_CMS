@@ -37,8 +37,17 @@ class Site_model extends CI_Model{
 		$this->db->update('data', $data);
 	}
 	
+	
+	//delete with sql 
+	function delete_row_two($data){
+		
+		//$query = $this->db->query("DELETE FROM data WHERE title=$title AND id=$id)";
+		
+		//return $query;
+		
+	}
+	
 	//delete a record row
-	/*
 	function delete_row(){
 		//autoloaded uri - 
 		$sql = $this->db->query("DELETE FROM data WHERE id=$data");
@@ -47,7 +56,6 @@ class Site_model extends CI_Model{
 		//$this->db->where('id', $this->uri->segment(4));
 		//$this->db->delete('data');
 	}
-	*/	
 
 }
 

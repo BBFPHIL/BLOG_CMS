@@ -10,7 +10,9 @@
 <body>
 
 	<!-- FORM TO ADD ITEMS TO DATABASE --> 
-	<h2>Create</h2>
+	<h2>Create (using active records)</h2>
+	
+				<!-- THIS IS HOW YOU CONNECT TO CONTROLLER / METHOD!! -->
 		<?php echo form_open('site/create'); ?>
 		
 		<p>
@@ -22,23 +24,49 @@
 		
 		<p>
 			<label for="content">Content: </label>
-			<input type="text" name="contents" id="contents"?>
+			<input type="text" name="contents" id="contents"/>
 		</p>
 		
 		<p>
 			<label for="author">Author: </label>
-			<input type="text" name="author" id="author"?>
+			<input type="text" name="author" id="author"/>
 		</p>
 		
 		<p>
 			
-			<input type="submit" value="Submit"?>
+			<input type="submit" value="Submit"/>
 			
 		</p>
 		
-		<?php echo form_close(); ?>
+		<!-- <?php echo form_close(); ?> -->
 		
 		<hr/>
+		
+		<h2>Delete with this form </h2>
+		
+		<?php echo form_open('site/delete_sql'); ?>
+		
+		<p>
+			<label for="title">Title: </label>
+			<input type="text" name="title" id="title"/>
+		</p>
+		
+		<p>
+			<label for="id">ID: </label>
+			<input type="text" name="id" id="id"/>
+			
+		</p>
+		
+		<p>
+		
+			<input type="submit" value="Submit"/>
+			
+		</p>
+		
+		<hr/>
+		
+		
+		<?php echo form_close(); ?>
 		
 		<!-- FORM TO RETURN DATABASE ITEMS -->
 		<h2>Read</h2>
@@ -60,12 +88,9 @@
 		<hr/>
 		
 		<!-- DELETING FROM DATABASE! --> 
-		<h2> Delete </h2>
+		<h2> OR - Delete by selection </h2>
 		
 		<p>To sample the delete method, simply clock on one of the heading listed above. A delete query will run </p>
-			
-			
-		
 		
 		
 		
