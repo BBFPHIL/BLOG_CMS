@@ -2,7 +2,7 @@
 
 class Site_model extends CI_Model{
 
-	//Get all titles
+	//Get all records
 	function getAll(){
 		$q = $this->db->get('test');
 		//Filter through each row and save each row
@@ -37,13 +37,18 @@ class Site_model extends CI_Model{
 		$this->db->update('data', $data);
 	}
 	
-	//delet a record row
+	//delete a record row
+	/*
 	function delete_row(){
 		//autoloaded uri - 
-		$this->db->where('id', $this->uri->segment(3));
-		$this->db->delete('data');
+		$sql = $this->db->query("DELETE FROM data WHERE id=$data");
+
+		
+		//$this->db->where('id', $this->uri->segment(4));
+		//$this->db->delete('data');
 	}
-	
+	*/	
+
 }
 
 
