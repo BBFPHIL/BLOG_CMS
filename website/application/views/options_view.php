@@ -47,6 +47,7 @@
 			<!-- Anchor shows path to controller method and $row->id is the value id to hand off to the delete function in controller, hyper linking title
 			as the trigger for deleting in options view -->
 			<h2><?php echo anchor("site/options/delete/$row->id", $row->title); ?> </h2>
+			
 			<div><?php echo $row->contents; ?> </div>
 			
 		<?php endforeach; ?>
