@@ -46,10 +46,7 @@ class Site_model extends CI_Model{
 		$id = $data['id'];
 		
 		//Executing delete -- now it should be gone after this
-		$sql = $this->db->query("DELETE FROM data WHERE id='$id'");
-		
-		//Execute!
-		$this->db->query($sql);
+		$this->db->query("DELETE FROM data WHERE id='$id'");
 		
 	}
 
