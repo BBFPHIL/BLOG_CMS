@@ -50,7 +50,15 @@ class Site extends CI_Controller{
 	
 	//Deleting a database record
 	function delete(){
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('id', 'ID', 'required');
 		
+		
+		if($this->form_validation->run() == FALSE){
+			
+			echo 'Please fill out the id field';	
+			
+		}else{
 		$id = $this->input->post('id');
 		
 		$data = array(
@@ -58,7 +66,9 @@ class Site extends CI_Controller{
 		);
 	
 		$this->site_model->delete_record($data);
-		$this->options();
+		$this->options();			
+			
+		}
 	
 	}
 	
