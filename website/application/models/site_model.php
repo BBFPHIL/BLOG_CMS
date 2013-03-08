@@ -1,5 +1,6 @@
 <?php
 
+
 class Site_model extends CI_Model{
 
 	//Get all records
@@ -54,7 +55,3 @@ class Site_model extends CI_Model{
 
 }
 
-
-
-
-?>
