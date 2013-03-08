@@ -52,9 +52,9 @@ class Email extends CI_Controller{
 			$this->email->message('Program 3 hours every day and you will become the best!');
 	
 			//item means grab from file
-			$path = $this->config->item('server_root');
+			//$path = $this->config->item('server_root');
 			//points directly to file to attach
-			$file = $path . '/ci/website/attachments/newsletter1.txt';
+			$file = base_URL() . '/attachments/newsletter1.txt';
 	
 			//attach to email
 			$this->email->attach($file);
