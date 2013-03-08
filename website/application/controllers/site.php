@@ -50,8 +50,16 @@ class Site extends CI_Controller{
 	
 	//Deleting a database record
 	function delete(){
-		$this->site_model->delete_row();
+		
+		$id = $this->input->post('id');
+		
+		$data = array(
+			'id' => $id
+		);
+	
+		$this->site_model->delete_record($data);
 		$this->options();
+	
 	}
 	
 	

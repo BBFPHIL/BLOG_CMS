@@ -38,15 +38,18 @@ class Site_model extends CI_Model{
 	}
 	
 	
-	
 	//delete a record row
-	function delete_row(){
-		//autoloaded uri - 
-		$sql = $this->db->query("DELETE FROM data WHERE id=$data");
-
+	function delete_record($data){
 		
-		//$this->db->where('id', $this->uri->segment(4));
-		//$this->db->delete('data');
+		//create var for sql
+		$id = $data['id'];
+		
+		//Executing delete -- now it should be gone after this
+		$sql = $this->db->query("DELETE FROM data WHERE id='$id'");
+		
+		//Execute!
+		$this->db->query($sql);
+		
 	}
 
 }

@@ -38,9 +38,18 @@
 			
 		</p>
 		
-		<!-- <?php echo form_close(); ?> -->
-		
 		<hr/>
+		<?php echo form_close(); ?>		
+		
+		<?php echo form_open('site/delete'); ?>
+		
+		<p>
+		
+			<label for="id">id: </label>
+			<input type="text" name="id" id="id" />
+			
+		</p>
+			<input type="submit" value="Submit"/>
 
 		<?php echo form_close(); ?>
 		
