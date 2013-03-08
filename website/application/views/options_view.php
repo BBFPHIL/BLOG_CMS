@@ -41,31 +41,7 @@
 		<!-- <?php echo form_close(); ?> -->
 		
 		<hr/>
-		
-		<h2>Delete with this form </h2>
-		
-		<?php echo form_open('site/delete_sql'); ?>
-		
-		<p>
-			<label for="title">Title: </label>
-			<input type="text" name="title" id="title"/>
-		</p>
-		
-		<p>
-			<label for="id">ID: </label>
-			<input type="text" name="id" id="id"/>
-			
-		</p>
-		
-		<p>
-		
-			<input type="submit" value="Submit"/>
-			
-		</p>
-		
-		<hr/>
-		
-		
+
 		<?php echo form_close(); ?>
 		
 		<!-- FORM TO RETURN DATABASE ITEMS -->

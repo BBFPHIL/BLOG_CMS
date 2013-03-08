@@ -38,17 +38,6 @@ class Site_model extends CI_Model{
 	}
 	
 	
-	//delete with sql 
-	function delete_row_two($data){
-		
-		$id = $data['id'];
-		$title = $data['title'];
-		
-		$query = $this->db->query("DELETE FROM data WHERE title=$title AND id=$id)";
-		
-		//return $query;
-		
-	}
 	
 	//delete a record row
 	function delete_row(){

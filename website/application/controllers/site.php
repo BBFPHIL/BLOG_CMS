@@ -55,22 +55,6 @@ class Site extends CI_Controller{
 	}
 	
 	
-	
-	//New delete with SQL
-	function delete_sql(){
-	
-		$data=array(
-			'title' => $this->input->post('title'),
-			'id' => $this->input->post('id')
-		);
-	
-		$this->site_model->delete_row_two($data);
-		$this->options();
-	}
-	
-	
-	
-	
 	//Updating a database record
 	function update(){
 		
