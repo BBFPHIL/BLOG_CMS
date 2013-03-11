@@ -10,7 +10,7 @@
 <body>
 
 	<!-- FORM TO ADD ITEMS TO DATABASE --> 
-	<h2>Create (using active records)</h2>
+	<h2>Post to blog</h2>
 	
 				<!-- THIS IS HOW YOU CONNECT TO CONTROLLER / METHOD!! -->
 		<?php echo form_open('site/create'); ?>
@@ -38,8 +38,11 @@
 			
 		</p>
 		
-		<hr/>
+	<hr/>
+		
 		<?php echo form_close(); ?>		
+		
+		<h2>Delete a post number </h2>
 		
 		<?php echo form_open('site/delete'); ?>
 		
@@ -52,9 +55,12 @@
 			<input type="submit" value="Submit"/>
 
 		<?php echo form_close(); ?>
+	
+	<hr/>
 		
 		<!-- FORM TO RETURN DATABASE ITEMS -->
-		<h2>Read</h2>
+	<div class="blog">
+		<h2>Read your blog!</h2>
 		<?php if(isset($records)) : foreach($records as $row) : ?>
 		
 			<!-- Anchor shows path to controller method and $row->id is the value id to hand off to the delete function in controller, hyper linking title
@@ -76,7 +82,7 @@
 		<h2> OR - Delete by selection </h2>
 		
 		<p>To sample the delete method, simply clock on one of the heading listed above. A delete query will run </p>
-		
+	</div>
 		
 		
 		

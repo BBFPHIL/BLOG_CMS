@@ -27,7 +27,14 @@ class Site_model extends CI_Model{
 	
 	//add a record to database
 	function add_record($data){
-		$this->db->insert('data', $data);
+	
+		//store variables
+		$title = $data['title'];
+		$contents = $data['contents'];
+		$author = $data['author'];
+		
+		$this->db->query("INSERT INTO data (title, contents, author) VALUES ('$title', '$contents', '$author')");
+		
 		return;
 		
 	}

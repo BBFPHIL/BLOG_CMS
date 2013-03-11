@@ -2,6 +2,7 @@
 
 class Site extends CI_Controller{
 
+
 	//Index page
 	function index() {
 
@@ -34,17 +35,41 @@ class Site extends CI_Controller{
 	
 	//Creating a database record
 	function create(){
-		$data = array(
-			'title' => $this->input->post('title'),
-			'contents' => $this->input->post('contents'),
-			'author' => $this->input->post('author')
-			
-		);
-
-		$this->site_model->add_record($data);
 		
-		//send back to main page
-		$this->options();
+		//Validation checking
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('title', 'Title', 'required');
+		$this->form_validation->set_rules('contents', 'Content', 'required');
+		$this->form_validation->set_rules('author', 'Author', 'required');
+		
+		//check if validated right
+		if($this->form_validation->run() == FALSE){
+			echo 'Please fill out the id field';
+		}else{
+			//execute
+			
+			//Get the data via post
+			$id = $this->input->post('title');
+			$title = $this->input->post('title');
+			$contents = $this->input->post('contents');
+			$author = $this->input->post('author');
+			
+			//Store in data array
+			$data = array(
+				'id' => $id,
+				'title' => $title,
+				'contents' => $contents,
+				'author' => $author
+			
+				);
+			
+			//Send to data model
+			$this->site_model->add_record($data);
+		
+			//send back to main blog field page
+			$this->options();			
+		}
 	}
 	
 	
@@ -86,5 +111,18 @@ class Site extends CI_Controller{
 		
 	}
 	
+	function members_area(){
+		$this->load->view('members_area');
+	}
+	
+	
+	function is_logged_in(){
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		
+		if(!isset($is_logged_in) || $is_logged_in != true){
+			echo 'You dont have permission to access his page. <a href="../login">Login</a>';
+			die();
+		}
+	}
 	
 }
